@@ -3,10 +3,9 @@
  * Proxies HLS manifests and media segments to avoid CORS issues.
  * For .m3u8 manifests, rewrites URLs to also route through this proxy.
  */
-
+export const runtime = 'edge';
 import { NextRequest, NextResponse } from 'next/server';
 
-export const runtime = 'nodejs';
 
 function resolveUrl(base: string, relative: string): string {
   if (relative.startsWith('http://') || relative.startsWith('https://')) {
